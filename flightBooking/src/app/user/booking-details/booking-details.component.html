@@ -1,0 +1,70 @@
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<div class="main">
+  <section>
+      <div class="container">
+          <div class="signup-content">
+            <div class="table-responsive">
+                <h3 class="form-title">Flight Details</h3>
+                <table class="table table-sm table-borderless section-center">
+                  <tbody>
+                    <tr>
+                      <th><strong>Flight No:</strong></th>
+                      <td>{{flightDetails.flightNo}}</td>
+                      <th ><strong>Tickets Available:</strong></th>
+                      <td>{{flightDetails.tickets}}</td>
+                    </tr>
+                    <tr>
+                      <th ><strong>From:</strong></th>
+                      <td>{{flightDetails.from}}</td>
+                      <th ><strong>Destination:</strong></th>
+                      <td>{{flightDetails.to}}</td>
+                    </tr>
+                    <tr>
+                        <th><strong>Date</strong></th>
+                        <td>{{flightDetails.date|date: 'dd-MMM-yyyy'}}</td>
+                        <th ><strong>Fare:</strong></th>
+                        <td> &#8377; {{flightDetails.fare}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <form [formGroup]="bookingData" (ngSubmit)="submitData()">
+                  <h4 class="form-title">Enter the details to book the flight</h4>
+                  <div class="form-group">
+                      First Name
+                      <input type="text" class="form-input" placeholder="Your FirstName" formControlName="firstName"/>
+                  </div>
+                  <span class="text-danger" *ngIf="bookingData.controls['firstName'].touched && !flightDetails.controls['firstName'].valid">*Airline is required</span>
+                  <div class="form-group">
+                      Last Name
+                      <input type="text" class="form-input" placeholder="Your Lastname" formControlName="lastName"/>
+                      <span class="text-danger" *ngIf="bookingData.controls['lastName'].touched && !flightDetails.controls['lastName'].valid">*Airline is required</span>
+                  </div>
+                  <div class="form-group">
+                    <label>Gender</label>
+                    <select class="form-input" name="gender" formControlName="gender">
+                    <option value="" disabled selected hidden>Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="others">Others</option>
+                    </select>
+                    <span class="text-danger" *ngIf="bookingData.controls['gender'].touched && !flightDetails.controls['gender'].valid">*Airline is required</span>
+                  </div>
+                  <div class="form-group">
+                    Age
+                    <input type="number" class="form-input" min="1" max="100" placeholder="Your Age" formControlName="age"/>
+                    <span class="text-danger" *ngIf="bookingData.controls['age'].touched && !flightDetails.controls['age'].valid">*Airline is required</span>
+                </div>
+
+                  <div class="form-group">
+                      <button type="submit" id="google-pay" class="form-submit">
+                        Proceed to payment
+                      </button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </section>
+  </div>
+
+  

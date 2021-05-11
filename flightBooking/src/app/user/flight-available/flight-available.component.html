@@ -1,0 +1,36 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<section>
+  <div class="jumbotron jumbotron-fluid pb-0 pt-5">
+    <div class="container">
+      <h1 class="display-4">Available Flights</h1>
+    </div>
+  </div>
+  <div class="container bootstrap snippets bootdey">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="well search-result" *ngFor= "let flight of flightList">
+            <div class="row">
+                    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-2" [ngSwitch]= flight.airline>
+                      <img class="img-responsive" src="../../../assets/AirIndia.png" *ngSwitchCase="'Air India'">
+                      <img class="img-responsive" src="../../../assets/indigo.jpg" *ngSwitchCase="'Indigo'">
+                      <img class="img-responsive" src="../../../assets/Spicejet.png" *ngSwitchCase="'Spicejet'">
+                      <img class="img-responsive" src="../../../assets/Vistara.png" *ngSwitchCase="'Vistara'">
+                    </div>
+                    <div class="col-xs-6 col-sm-9 col-md-9 col-lg-10 title">
+                        <h4>{{flight.from}}  <span class="material-icons align-middle">east</span>  {{flight.to}}
+                        </h4>
+                        <p>{{flight.date|date: 'dd-MMM-yyyy'}} 10:30 - 12:30 <br>Seats: {{flight.tickets}}</p>
+                        <h5>&#8377; {{flight.fare}}</h5>
+                        <button class="submit-btn btn-sm form-submit align-right" type="submit" routerLink="/book" (click)="selectedflight(flight)">
+                          Select<span class="material-icons align-middle pb-1">
+                            arrow_right_alt
+                            </span>
+                        </button>
+                    </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

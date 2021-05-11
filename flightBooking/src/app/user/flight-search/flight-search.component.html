@@ -1,0 +1,129 @@
+<div id="booking" class="section">
+	<div class="section-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="booking-cta">
+						<h1>Let the journey begin</h1>
+						<p>Book your flight now!</p>
+					</div>
+				</div>
+				<div class="col-md-7 col-md-offset-1">
+					<div class="booking-form">
+						<form [formGroup]="searchFlight" (ngSubmit)="flightSearch()">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<span class="form-label">From</span>
+										<select name="From" class="form-control" formControlName="from">
+											<option *ngFor="let city of cityList" [value]="city.name" >
+												{{city.name}}
+												</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<span class="form-label">To</span>
+										<select name="To" class="form-control form-select-lg" formControlName="to">
+											<option *ngFor="let city of cityList" [value]="city.name" >
+												{{city.name}}
+												</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<span class="form-label">Departure Date</span>
+										<input class="form-control" type="date" formControlName="date">
+									</div>
+								</div>
+							</div>
+							<div class="form-btn">
+								<button type="submit" class="submit-btn" >Show flights</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="popular_destination_area">
+	<div class="container">
+	<div class="row justify-content-center">
+	<div class="col-lg-6">
+	<div class="section_title text-center mb_70">
+	<h2>Popular Destinations</h2>
+	<p>Look at our popular destinations.</p>
+	</div>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-lg-4 col-md-6">
+	<div class="single_destination">
+	<div class="thumb">
+	<img src="https://images.unsplash.com/photo-1582450724147-0ee17201a14c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2003&q=80" alt="">
+	</div>
+	<div class="content">
+	<p class="d-flex align-items-center">New Delhi</p>
+	</div>
+	</div>
+	</div>
+	<div class="col-lg-4 col-md-6">
+	<div class="single_destination">
+	<div class="thumb">
+	<img src="https://images.unsplash.com/photo-1529253355930-ddbe423a2ac7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80" alt="">
+	</div>
+	<div class="content">
+	<p class="d-flex align-items-center">Mumbai </p>
+	</div>
+	</div>
+	</div>
+	<div class="col-lg-4 col-md-6">
+	<div class="single_destination">
+	<div class="thumb">
+	<img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="">
+	</div>
+	<div class="content">
+	<p class="d-flex align-items-center">Chennai  </p>
+	</div>
+	</div>
+	</div>
+	<div class="col-lg-4 col-md-6">
+	<div class="single_destination">
+	<div class="thumb">
+	<img src="https://images.unsplash.com/photo-1565018054866-968e244671af?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1916&q=80" alt="">
+	</div>
+	<div class="content">
+	<p class="d-flex align-items-center">Bengaluru </p>
+	</div>
+	</div>
+	</div>
+	<div class="col-lg-4 col-md-6">
+	<div class="single_destination">
+	<div class="thumb">
+	<img src="https://images.unsplash.com/photo-1563734167687-4677d35bf3c1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80" alt="">
+	</div>
+	<div class="content">
+	<p class="d-flex align-items-center">Kolkata</p>
+	</div>
+	</div>
+	</div>
+	<div class="col-lg-4 col-md-6">
+	<div class="single_destination">
+	<div class="thumb">
+	<img src="https://images.unsplash.com/photo-1524229648276-e66561fe45a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1026&q=80" alt="">
+	</div>
+	<div class="content">
+	<p class="d-flex align-items-center">Jaipur </p>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
