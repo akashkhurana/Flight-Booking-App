@@ -19,7 +19,7 @@ export class FlightSearchComponent implements OnInit {
   })
 
   constructor(private flight:FlightService, private router:Router) { }
-  cityList = <any>{}
+  cityList = <any>[]
   ngOnInit(): void {
     this.flight.getCities().subscribe((result)=>{
       this.cityList = result

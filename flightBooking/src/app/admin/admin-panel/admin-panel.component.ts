@@ -11,8 +11,8 @@ import {RouterModule} from '@angular/router';
 export class AdminPanelComponent implements OnInit {
 
   constructor(private flight:FlightService) { }
-  bookingList= <any>{}
-  flightList=<any>{}
+  bookingList= <any>[]
+  flightList=<any>[]
   ngOnInit(): void {
     this.flight.allBookings().subscribe((result)=>{
       this.bookingList =result

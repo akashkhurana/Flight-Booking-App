@@ -1,8 +1,6 @@
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { HttpParams} from '@angular/common/http'
 import { TestBed } from '@angular/core/testing'; 
-import { FlightService, } from './flight.service';
-import { from } from 'rxjs';
+import { FlightService} from './flight.service';
 
 describe('FlightService', () => {
   let service: FlightService, 
@@ -75,7 +73,13 @@ describe('FlightService', () => {
     const req = httpTestingController.expectOne("http://localhost:3200/flight/search?from=New%20Delhi&to=Mumbai&date=2021-05-10");
     expect(req.request.method).toEqual("GET")
   })
-
+  
+  // it('should find selected flight details', ()=>{
+  //   service.getSelectedFlightDetails().subscribe(flight=>{
+  //     expect(flight).toBeTruthy("No flight found");
+  //   })
+  //   localStorage.setItem('searchQuery', JSON.stringify(  {"_id":"6098b1232fb4c96f6823be8c","airline":"Vistara","flightNo":"IND-102","from":"New Delhi","to":"Mumbai","date":"2021-05-10T00:00:00.000Z","tickets":12,"fare":5000,"__v":0}))
+  // })
   afterEach(() =>{
     httpTestingController.verify()
   })

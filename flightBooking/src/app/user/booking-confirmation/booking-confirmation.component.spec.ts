@@ -1,4 +1,7 @@
+import { CommonModule } from '@angular/common';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FlightService } from 'src/app/flight.service';
 
 import { BookingConfirmationComponent } from './booking-confirmation.component';
 
@@ -8,7 +11,9 @@ describe('BookingConfirmationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BookingConfirmationComponent ]
+      imports: [ HttpClientTestingModule, CommonModule],
+      declarations: [ BookingConfirmationComponent ],
+      providers: [ FlightService]
     })
     .compileComponents();
   });

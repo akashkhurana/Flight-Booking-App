@@ -1,5 +1,7 @@
+import { CommonModule } from '@angular/common';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FlightService } from 'src/app/flight.service';
 import { AdminPanelComponent } from './admin-panel.component';
 
 describe('AdminPanelComponent', () => {
@@ -8,9 +10,15 @@ describe('AdminPanelComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdminPanelComponent ]
+      imports: [HttpClientTestingModule, CommonModule],
+      declarations: [ AdminPanelComponent ],
+      providers: [HttpClientTestingModule, FlightService]
     })
-    .compileComponents();
+    .compileComponents().
+    then(()=>{
+      fixture = TestBed.createComponent(AdminPanelComponent)
+      component = fixture.componentInstance
+    });
   });
 
   beforeEach(() => {

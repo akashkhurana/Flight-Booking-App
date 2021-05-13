@@ -2,9 +2,11 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FlightSearchComponent } from './flight-search.component';
 import { Component, OnInit } from '@angular/core';
 import { FlightService } from '../../flight.service'
-import {FormGroup, FormControl} from '@angular/forms'
+import {FormGroup, FormControl, ReactiveFormsModule, FormsModule} from '@angular/forms'
 import {formatDate} from '@angular/common'
 import {Router} from '@angular/router'
+import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 
 
 describe('FlightSearchComponent', () => {
@@ -13,7 +15,8 @@ describe('FlightSearchComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FlightSearchComponent ]
+      declarations: [ FlightSearchComponent ],
+      imports: [ReactiveFormsModule, FormsModule, HttpClientModule, RouterTestingModule]
     })
     .compileComponents();
   });
